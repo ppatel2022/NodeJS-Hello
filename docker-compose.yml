@@ -1,0 +1,13 @@
+version: '3.4'
+services:
+  hello-world:
+    image: "hello:${TAG}"
+    build:
+        context: .
+        dockerfile: ./Dockerfile
+    entrypoint: env
+    environment:
+        NODE_ENV: "${NODE_ENV}"
+    command:
+        - echo "Environment = ${NODE_ENV};  and Image Tag = ${TAG}"
+   
